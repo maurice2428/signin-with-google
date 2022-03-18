@@ -1,7 +1,7 @@
 <?php
 class Connect extends PDO{
     public function __construct (){
-        parent::__construct("mysql:host=localhost;dbname=google_login", 'root', '',
+        parent::__construct("mysql:host=YOUR_HOST;dbname=YOUR_USERNAME", 'USER', 'PASSWORD',
             array(PDO::MYSQL_ATTR_INIT_COMMAND =>"SET NAMES utf8"));
         $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -29,7 +29,7 @@ class Controller {
             <tr>
                 <td>'.$userInfo["f_name"].'</td>
                 <td>'.$userInfo["l_name"].'</td>
-                <td><img style="height: 50px;,border-radius:50%;, width: 50px;" src="'.$userInfo["avatar"].'" alt="User Avatar"></td>
+                <td><img style="border-radius:60%;" src="'.$userInfo["avatar"].'" alt="User Avatar"></td>
                 <td>'.$userInfo["email"].'</td>
             </tr>
             ';
